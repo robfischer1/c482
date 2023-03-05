@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.robfischer.c482.controller.MainController">
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+   </padding>
+   <Label layoutX="32.0" layoutY="14.0" style="-fx-font-size: 14; -fx-font-weight: bold;"
+          text="Inventory Management System"/>
+   <Button layoutX="740.0" layoutY="364.0" mnemonicParsing="false" onAction="#onExitButtonClick" text="Exit"
+           textAlignment="CENTER"/>
+   <AnchorPane layoutX="24.0" layoutY="50.0" prefHeight="300.0" prefWidth="376.0"
+               style="-fx-border-color: black; -fx-border-width: 1px; -fx-border-radius: 15px;">
+      <TableView id="partTable" fx:id="partTable" layoutX="8.0" layoutY="43.0" prefHeight="200.0">
+         <columns>
+            <TableColumn fx:id="partColumnId" editable="false" prefWidth="47.0" text="Part ID"/>
+            <TableColumn fx:id="partColumnName" editable="false" prefWidth="69.0" text="Part Name"/>
+            <TableColumn fx:id="partColumnStock" editable="false" prefWidth="91.0" text="Inventory Level"/>
+            <TableColumn fx:id="partColumnPrice" editable="false" prefWidth="142.0" text="Price / Cost Per Unit"/>
+         </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+         </columnResizePolicy>
+      </TableView>
+      <Button id="partButtonEdit" layoutX="231.0" layoutY="249.0" mnemonicParsing="false" onAction="#openEditPart"
+              text="Modify"/>
+      <Button id="partButtonDelete" layoutX="307.0" layoutY="249.0" mnemonicParsing="false"
+              onAction="#onDeletePartButtonClick" text="Delete"/>
+      <Button id="partButtonAdd" layoutX="183.0" layoutY="249.0" mnemonicParsing="false" onAction="#openAddPart"
+              text="Add"/>
+      <TextField fx:id="partSearchField" layoutX="210.0" layoutY="13.0" onAction="#partSearchHandler"
+                 promptText="Search by Part ID or No"/>
+      <Label layoutX="14.0" layoutY="17.0" style="-fx-font-weight: bold;" text="Parts"/>
+   </AnchorPane>
+   <AnchorPane layoutX="416.0" layoutY="50.0" prefHeight="300.0" prefWidth="376.0"
+               style="-fx-border-color: black; -fx-border-width: 1px; -fx-border-radius: 15px;">
+      <TableView id="partTable" fx:id="productTable" layoutX="8.0" layoutY="43.0" prefHeight="200.0">
+         <columns>
+            <TableColumn fx:id="productColumnId" editable="false" prefWidth="47.0" text="Part ID"/>
+            <TableColumn fx:id="productColumnName" editable="false" prefWidth="69.0" text="Part Name"/>
+            <TableColumn fx:id="productColumnStock" editable="false" prefWidth="91.0" text="Inventory Level"/>
+            <TableColumn fx:id="productColumnPrice" editable="false" prefWidth="142.0" text="Price / Cost Per Unit"/>
+         </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+         </columnResizePolicy>
+      </TableView>
+      <Button id="productButtonEdit" layoutX="231.0" layoutY="249.0" mnemonicParsing="false"
+              onAction="#openEditProduct" text="Modify"/>
+      <Button id="productButtonDelete" layoutX="307.0" layoutY="249.0" mnemonicParsing="false"
+              onAction="#onDeleteProductButtonClick" text="Delete"/>
+      <Button id="productButtonAdd" layoutX="183.0" layoutY="249.0" mnemonicParsing="false"
+              onAction="#openAddProduct" text="Add"/>
+      <TextField fx:id="productSearchField" layoutX="210.0" layoutY="13.0" onAction="#productSearchHandler"
+                 promptText="Search by Part ID or No"/>
+      <Label layoutX="14.0" layoutY="17.0" style="-fx-font-weight: bold;" text="Products"/>
+   </AnchorPane>
+</AnchorPane>
